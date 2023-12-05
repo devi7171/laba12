@@ -51,7 +51,7 @@ return(cos(Numeral));
 else if(strncmp(Operation, "tan", 3) == 0)
 return(tan(Numeral));
 else
-{}
+{
 printf("Неправильно введено действие ");
 return(HUGE_VAL);
 }

@@ -1,15 +1,15 @@
-#
-# Makefile
-#
 CC = gcc
-CFLAGS =
+CFLAGS = -g
 LIBS = -lm
+
 calcul: calculate.o main.o
-gcc calculate.o main.o -o calcul -g $(LIBS)
+	$(CC) calculate.o main.o -o calcul $(LIBS) && ./calcul
+
 calculate.o: calculate.c calculate.h
-gcc -g -c calculate.c $(CFLAGS)
+	$(CC) -g -c calculate.c $(CFLAGS)
+
 main.o: main.c calculate.h
-gcc -g -c main.c $(CFLAGS)
+	$(CC) -g -c main.c $(CFLAGS)
+
 clean:
--rm calcul *.o *~
-# End Makefile
+	-rm calcul *.o *~
